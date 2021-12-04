@@ -9,30 +9,14 @@ import { Login } from './components/login.component';
 import SignUp from "./components/signup.component";
 import  { PageWithMap } from './components/PageWithMap';
 import {PageUser} from './components/PageUser';
-
+import {HistoryPage} from './components/HistoryPage';
+import {NewZones} from './components/NewZones';
 
 function App() {
   
   return (
   <Router>
-    <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-        <div className="container">
-          <Link className="navbar-brand" to={"/sign-in"}>AMBROZIA</Link>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to={"/sign-in"}>Login</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={"/sign-up"}>Register</Link>
-              </li>
-              
-            </ul>
-          </div>
-        </div>
-      </nav>
-
+   
       <div className="auth-wrapper">
         <div className="auth-inner">
           <Switch>
@@ -41,10 +25,12 @@ function App() {
             <Route exact path="/sign-up" component={SignUp} />
             <Route exact path="/map" component={PageWithMap} />
             <Route exact path="/mapuser" component={PageUser} />
+            <Route exact path="/historypage" component={HistoryPage} />
+            <Route exact path="/newzones" component={NewZones} />
           </Switch>
         </div>
       </div>
-    </div></Router>)
+    </Router>)
 }
 
 export default App;
