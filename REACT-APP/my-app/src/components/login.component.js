@@ -4,11 +4,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export function Login() 
 {     
+  
+  
         const history = useHistory();
         function LoginClick() {
             
             console.log("Try to login:");
-            history.push("/map")
+            history.push("/map");
+        
       
           }
 

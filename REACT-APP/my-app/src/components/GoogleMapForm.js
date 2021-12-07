@@ -1,18 +1,71 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
 import { Marker } from "react-google-maps";
+import Geocode from "react-geocode";
+
 
 export default function GoogleMapForm(){
 
+
 function Map()
 {
+  const [location,setLocation] =useState({latitudeMe:0.0,longitudeMe:0.0});
+  const getLocation=()=>
+  {
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(showPosition);}
+      else{
+        alert("Nu este suportata de acest browser");
+      }
+    }
+  
+    const showPosition=(position)=>
+    {
+      setLocation({...location, latitudeMe: position.coords.latitude, longitudeMe:position.coords.longitude});
+  
+    }
+    
+    getLocation();
+
+  Geocode.setApiKey(process.env.REACT_APP_GOOGLE_KEY);
+  Geocode.setLanguage("ro");
+  Geocode.setRegion("ro");
+  Geocode.setLocationType("ROOFTOP");
+    
+  // Enable or disable logs. Its optional.
+  Geocode.enableDebug();
+
   const [markers, setMarkers]= React.useState([]);
+  
+  
+  const [location1,setLocation1] =useState([]);
+  
+ 
     return(
       <div>
       < GoogleMap
-      defaultZoom ={10}
-      defaultCenter={{lat:45.8963176,lng:23.4838633}}
+      zoom={15}
+      center={{lat:Number(location.latitudeMe),lng:Number(location.longitudeMe)}}
       onClick={(event)=>{
+
+
+      console.log(location.latitudeMe,location.longitudeMe);
+    
+
+       Geocode.fromLatLng(event.latLng.lat(), event.latLng.lng()).then(
+        (response) => {
+          const address = response.results[0].formatted_address;
+       
+          setLocation1(address);
+          console.log(location1);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+
+
+      
         setMarkers((current) =>[
           ...current,
         {
@@ -22,13 +75,23 @@ function Map()
         },
       ]);
       }}>
-        {markers.map((marker) =>(
-        < Marker key={marker.time.toISOString()}
-        position={{lat:marker.lat,lng: marker.lng}}/>
-        ))}
+        {
+        
+        markers.map((marker) =>(
+        < Marker
+                   key={marker.time.toISOString()}
+                   position={{lat:marker.lat,lng: marker.lng}}
+       />
+       
+        )
+       
+        
+        )
+        }
          
         </GoogleMap>
         </div>
+      
     );
 }
 

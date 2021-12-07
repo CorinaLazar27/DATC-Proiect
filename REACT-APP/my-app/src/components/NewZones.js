@@ -41,6 +41,8 @@ export function NewZones()  {
                    <div className="new-zones" key={index}>
                      
                      <input type="text" name="zone"  onChange={e => handleChange(index,e)} />
+
+
                      <button type="button" className="btn-accept"></button>
                      <button type="button" className="btn-refuse" onClick={() =>removeFormFields(index)}></button>
                      </div>
