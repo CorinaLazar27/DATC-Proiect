@@ -4,12 +4,12 @@
       "Longitudine":21.2272,
       "Latitudine": 45.7484,
       "Titlu":"Ambrozie",
-      "Descriere": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "Descriere": "",
       "Status": 0,
       "User":{
-          "nume":"Paraiala",
-          "prenume":"Denisia",
-          "Email":"denisia@gmail.com"
+          "nume":"",
+          "prenume":"",
+          "Email":""
         
       }
     },
@@ -17,13 +17,13 @@
         "id": 2,
         "Longitudine": 21.2275,
         "Latitudine": 45.759,
-        "Titlu":"Inundatie",
-        "Descriere": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+        "Titlu":"",
+        "Descriere": "",
         "Status": 1,
         "User":{
-            "nume":"Paraiala",
-            "prenume":"Denisia",
-            "Email":"denisia@gmail.com"
+            "nume":"",
+            "prenume":"",
+            "Email":""
            
         }
        

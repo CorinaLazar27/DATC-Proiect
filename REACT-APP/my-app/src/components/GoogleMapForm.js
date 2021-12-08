@@ -9,7 +9,7 @@ export default function GoogleMapForm(){
 
 function Map()
 {
-  const [location,setLocation] =useState({latitudeMe:0.0,longitudeMe:0.0});
+  const [location,setLocation] =useState({latitudeMe:"",longitudeMe:""});
   const getLocation=()=>
   {
     if(navigator.geolocation){
@@ -44,8 +44,11 @@ function Map()
     return(
       <div>
       < GoogleMap
-      zoom={15}
-      center={{lat:Number(location.latitudeMe),lng:Number(location.longitudeMe)}}
+      zoom={18}
+      center={
+        { lat: Number(location.latitudeMe),
+          lng: Number(location.longitudeMe)}
+        }
       onClick={(event)=>{
 
 
@@ -57,6 +60,8 @@ function Map()
           const address = response.results[0].formatted_address;
        
           setLocation1(address);
+
+          
           console.log(location1);
         },
         (error) => {
@@ -72,6 +77,8 @@ function Map()
           lat:event.latLng.lat(),
           lng:event.latLng.lng(),
           time: new Date(),
+    
+          
         },
       ]);
       }}>
@@ -81,6 +88,12 @@ function Map()
         < Marker
                    key={marker.time.toISOString()}
                    position={{lat:marker.lat,lng: marker.lng}}
+                
+                 icon={{
+                   url:"http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+                  }
+                }
+           
        />
        
         )

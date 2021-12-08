@@ -26,13 +26,12 @@ export function PageWithMap()  {
               <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
-                    <Link className="nav-link" to={"/newzones"}>Zone Noi</Link>
+                    <Link className="nav-link" to={"/mapuser"}>User Page</Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to={"/historypage"}>Istoric</Link>
+                    <Link className="nav-link" to={"/map"}>Admin</Link>
                   </li>
-                  
-                </ul>
+                  </ul>
               </div>
             </div>
           </nav>

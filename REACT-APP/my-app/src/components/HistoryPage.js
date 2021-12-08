@@ -10,7 +10,14 @@ export function HistoryPage()  {
               <div className="container">
                 <Link className="navbar-brand" to={"/sign-in"}>AMBROZIA</Link>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-                 
+                <ul className="navbar-nav ml-auto">
+                  <li className="nav-item">
+                    <Link className="nav-link" to={"/mapuser"}>User Page</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to={"/map"}>Admin</Link>
+                  </li>
+                  </ul>
                 </div>
               </div>
             </nav>
