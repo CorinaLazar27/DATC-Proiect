@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export function Login() 
 {     
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
   
         const history = useHistory();
         function LoginClick() {

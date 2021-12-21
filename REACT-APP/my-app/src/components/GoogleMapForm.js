@@ -9,6 +9,7 @@ export default function GoogleMapForm(){
 
 function Map()
 {
+  
   const [location,setLocation] =useState({latitudeMe:"",longitudeMe:""});
   const getLocation=()=>
   {
@@ -107,7 +108,9 @@ function Map()
       
     );
 }
-
+function refreshPage() {
+  window.location.reload(false);
+}
   const WrappedMap = withScriptjs(withGoogleMap(Map));
   
   return (
@@ -120,6 +123,9 @@ function Map()
         containerElement={<div style={{ height: "100%" }} />}
         mapElement={<div style={{ height: "100%" }} />}
       ></WrappedMap>
+       <div>
+      <button onClick={refreshPage}>Click to refresh map!</button>
+    </div>
     </div>
   );
 };

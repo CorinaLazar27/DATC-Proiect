@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+import { useMediaQuery } from 'react-responsive';
 
 import { Login } from './components/login.component';
 import SignUp from "./components/signup.component";
@@ -15,6 +15,7 @@ import {NewZones} from './components/NewZones';
 function App() {
   
   return (
+    
   <Router>
    
       <div className="auth-wrapper">
