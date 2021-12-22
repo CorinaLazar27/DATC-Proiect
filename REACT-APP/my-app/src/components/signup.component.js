@@ -1,12 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
+
 export function SignUp() {
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-
+ 
+  const check=true;
   const history = useHistory();
  
 
@@ -32,24 +36,13 @@ export function SignUp() {
 
      
   };
-  const getUser= async () => {
-   
-
-    axios.get('/user')
-  .then((response) => {
-    console.log(response.data);
-
-  });
-
-
-   
-  };
-
   function RegisterClick() {
   
     tryToRegister();
+    console.log(check);
     history.push("/sign-in");
   }
+  
         return (
           <div className="App">
           <nav className="navbar navbar-expand-lg navbar-light fixed-top">
@@ -74,25 +67,29 @@ export function SignUp() {
 
                 <div className="form-group">
                     <label>First name</label>
-                    <input type="text" className="form-control" placeholder="First name" />
+                    <input type="text" className="form-control" placeholder="First name"
+                     onChange={(e) => setFirstName(e.target.value) }/>
                 </div>
 
                 <div className="form-group">
                     <label>Last name</label>
-                    <input type="text" className="form-control" placeholder="Last name" />
+                    <input type="text" className="form-control" placeholder="Last name" 
+                     onChange={(e) => setLastName(e.target.value)}/>
                 </div>
 
                 <div className="form-group">
                     <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
+                    <input type="email" className="form-control" placeholder="Enter email" 
+                     onChange={(e) => setUserName(e.target.value)}/>
                 </div>
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
+                    <input type="password" className="form-control" placeholder="Enter password" 
+                     onChange={(e) => setPassword(e.target.value)}/>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Register</button>
+                <button type="submit" className="btn btn-primary btn-block" onClick={()=>RegisterClick()}>Register</button>
                
             </form></div>
         );
