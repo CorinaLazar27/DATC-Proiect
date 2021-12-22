@@ -18,7 +18,7 @@ h5,
 h6,
 label,
 span {
-  font-weight: 200;
+  font-weight: 500;
   font-family: "Fira Sans", sans-serif;
 }
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
@@ -29,7 +29,7 @@ span {
 body {
   min-height: 100vh;
   display: flex;
-  font-weight: 200;
+  font-weight: 400;
   font-family: "Fira Sans", sans-serif;
 }
 
@@ -41,7 +41,7 @@ h5,
 h6,
 label,
 span {
-  font-weight: 200;
+  font-weight: 500;
   font-family: "Fira Sans", sans-serif;
 }
 
@@ -157,52 +157,61 @@ html,
   height: 100%;
 }
 
-.history-unvalidated {
+
+
+.history-unvalidated{
+ 
   margin-left: 1.01em;
+  
 }
-.history-validated {
+.history-validated{
+  
   margin-left: 2.2em;
 }
 
-.history-total {
+.history-total{
   margin-left: 6.1em;
+ 
 }
-.history-validated,
-.history-unvalidated,
-.history-total {
+.history-validated, .history-unvalidated, .history-total{
   width: 88%;
 }
-.history {
+.history{
   text-align: left;
 }
 
-.new-zones {
-  display: flex;
+.new-zones{
+  display:flex;
   flex-direction: row;
-  margin-left: 43%;
+  margin-left:43%;
   margin-bottom: 0.5em;
+  
 }
 
-.btn-accept {
-  background: url("../src/bifa_verde.png");
+
+
+.btn-accept{
+  background:url("../src/bifa_verde.png");
   background-position: center center;
-  background-repeat: no-repeat;
+  background-repeat:no-repeat;
   background-size: 100% 100%;
-  width: 2%;
-  margin-right: 0.7em;
+  width:2%;
+  margin-right:0.7em;
   border: 0px;
   margin-left: 0.7em;
+ 
 }
 
-.btn-refuse {
-  background: url("../src/icon-x.png");
+.btn-refuse{
+  background:url("../src/icon-x.png");
   background-position: center center;
-  background-repeat: no-repeat;
+  background-repeat:no-repeat;
   background-size: 100% 100%;
-  width: 2%;
+  width:2%;
   border: 0px;
+  
 }
-.button-section {
+.button-section{
   margin: 3%;
 }
 .button-add {
