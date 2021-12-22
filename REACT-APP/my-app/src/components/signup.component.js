@@ -9,14 +9,11 @@ export function SignUp() {
   const [lastName, setLastName] = useState("");
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [loginData, setLoginData] = useState({ PartitionKey: "", RowKey: "" });
-  const [login, setLogin] = useState(true);
+
   const history = useHistory();
  
 
   const tryToRegister = async () => {
-    console.log("Try to register");
-
 
     const data = {
       PartitionKey: userName,
@@ -27,34 +24,34 @@ export function SignUp() {
     };
 
     await axios
-      .post("https://login-ambrosia.azurewebsites.net/user",data,
+      .post("/user",data,
 
       )
       .then((response) => response)
       .then((json) => {
         console.log(json.data);
-        setLogin(json.data);
         return json.data;
       });
+
+     
   };
   const getUser= async () => {
-    console.log("Get user:");
+   
+
+    axios.get('/user')
+  .then((response) => {
+    console.log(response.data);
+
+  });
+
 
    
   };
 
   function RegisterClick() {
-    console.log("click");
-    console.log(userName);
-    console.log(password);
-    history.push("/sign-in");
+  
     tryToRegister();
-    //getUser();
-    //if (login) history.push("/sign-in");
-    //else alert("parola grasita");
-   
-
-
+    history.push("/sign-in");
   }
         return (
           <div className="App">
