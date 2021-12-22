@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 export function SignUp() {
 
-<<<<<<< HEAD
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [userName, setUserName] = useState("");
@@ -51,8 +50,6 @@ export function SignUp() {
     tryToRegister();
     history.push("/sign-in");
   }
-=======
->>>>>>> 07e3b95f446b3caec50c5576fa09893e970bcfb7
         return (
           <div className="App">
           <nav className="navbar navbar-expand-lg navbar-light fixed-top">

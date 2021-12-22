@@ -21,11 +21,8 @@
     "react-geocode": "^0.2.3",
     "react-google-maps": "^9.4.5",
     "react-map-gl": "^6.1.17",
-<<<<<<< HEAD
     "react-notifications": "^1.7.3",
     "react-responsive": "^9.0.0-beta.5",
-=======
->>>>>>> 07e3b95f446b3caec50c5576fa09893e970bcfb7
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "reactjs-popup": "^2.0.5",

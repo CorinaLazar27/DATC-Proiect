@@ -9,7 +9,6 @@ export default function GoogleMapForm(){
   
 function Map()
 {
-<<<<<<< HEAD
   const putLocationToDataBase= async () => {
 
     const data = {
@@ -32,8 +31,6 @@ function Map()
      
   };
   
-=======
->>>>>>> 07e3b95f446b3caec50c5576fa09893e970bcfb7
   const [location,setLocation] =useState({latitudeMe:"",longitudeMe:""});
   const [locationToDataBase,setLocationToDataBase]=useState({lat:"",long:""});
   const getLocation=()=>
