@@ -3,7 +3,6 @@ import GoogleMapForm from "./GoogleMapForm";
 import { Button } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-
 export function PageUser()  {
   const history = useHistory();
   function HistoryClick() {
