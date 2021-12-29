@@ -41,8 +41,9 @@ export function PageUser()  {
           </div>
           <div className="map1">
             <GoogleMapForm />
+            <button onClick={() => window.location.reload(false)}>Click to refresh map!</button>
           </div>
-
+        
         </div></div>
         
         );

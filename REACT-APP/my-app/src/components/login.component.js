@@ -8,9 +8,9 @@ export function Login()
 {     
         const [userName, setUserName] = useState("");
         const [password, setPassword] = useState("");
-        const [check,setCheck] = useState(false);
+      
         const history = useHistory();
-        var myBoolean = false;
+      
 
         const getUser= async () => {
         
@@ -24,10 +24,18 @@ export function Login()
                 console.log(response.data[i].password);
                 if((userName == response.data[i].partitionKey) && (password == response.data[i].password))
                     { 
-                      console.log("bingo"); 
-                      myBoolean=true;
-                      setCheck(true);
-                      break;
+                      if(response.data[i].rowKey == "admin")
+                      {history.push("/map");}
+                      else if(response.data[i].rowKey == "user")
+                     {
+                        history.push("/mapuser");
+                    }
+                         else 
+                         {
+                           history.push("/sign-up");
+                          }
+                       
+                   
 
                   }
               }
@@ -36,18 +44,8 @@ export function Login()
 
         function LoginClick() {
             
-            console.log("!!!Try to login!!!");
-          
-           getUser();
-           console.log("check:"+check);
-           console.log("variabila:"+myBoolean);
-          // if(global.myBoolean == true)
-               history.push("/map");
-           // else
-           //  { history.push("/sign-in");
-             // alert("Parola sau user incorect");
-            //}
-
+          getUser();
+          history.push("/sign-up");
       
           }
       

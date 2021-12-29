@@ -12,10 +12,11 @@ function Map()
   const putLocationToDataBase= async () => {
 
     const data = {
-      PartitionKey: "corinaa@yahoo.com",
-      RowKey: "invalid",
-      Latitude: locationToDataBase.lat,
-      Longitude: locationToDataBase.long
+      PartitionKey: locationToDataBase.lat.toString(),
+      RowKey: locationToDataBase.long.toString(),
+      Adresa: location1,
+      Status: "invalid",
+      
     };
 
     await axios

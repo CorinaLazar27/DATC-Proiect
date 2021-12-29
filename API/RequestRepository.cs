@@ -18,7 +18,7 @@ namespace API
         {
             var account = CloudStorageAccount.Parse( connectionString );
             tableClient = account.CreateCloudTableClient();
-            requestsTable = tableClient.GetTableReference( "requests" );
+            requestsTable = tableClient.GetTableReference( "map" );
             await requestsTable.CreateIfNotExistsAsync();
         }
 
