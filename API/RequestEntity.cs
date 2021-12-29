@@ -4,16 +4,14 @@ namespace API
 {
     public class RequestEntity : TableEntity
     {
-        public RequestEntity(string Email, string TimeStamp)
+        public RequestEntity(string Latitude, string Longitude)
         {
-            this.PartitionKey=Email;
-            this.RowKey=TimeStamp;
+            this.PartitionKey=Latitude;
+            this.RowKey=Longitude;
         }
 
         public RequestEntity(){}
-
-        public double Latitude{get;set;}
-        public double Longitude{get;set;}
+        public string Adresa{get;set;}
         public string Status{get;set;}
 
     }

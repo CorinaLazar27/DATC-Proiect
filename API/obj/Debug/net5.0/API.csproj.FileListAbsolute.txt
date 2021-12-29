@@ -29,3 +29,8 @@ F:\Facultate\Anul 4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\AP
 F:\Facultate\Anul 4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\ref\API.dll
 F:\Facultate\Anul 4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\API.pdb
 F:\Facultate\Anul 4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\API.genruntimeconfig.cache
+F:\Facultate\Anul 4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\publish\web.config
+F:\Facultate\Anul 4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\publish\API.deps.json
+F:\Facultate\Anul 4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\publish\API.runtimeconfig.json
+F:\Facultate\Anul 4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\publish\appsettings.Development.json
+F:\Facultate\Anul 4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\publish\appsettings.json

@@ -13,6 +13,7 @@ namespace API
         private string connectionString;
         private CloudTableClient tableClient;
         private CloudTable requestsTable;
+        
         private async Task InitializeTable()
         {
             var account = CloudStorageAccount.Parse( connectionString );
