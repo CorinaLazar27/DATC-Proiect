@@ -11,6 +11,7 @@ import  { PageWithMap } from './components/PageWithMap';
 import {PageUser} from './components/PageUser';
 import {HistoryPage} from './components/HistoryPage';
 import {NewZones} from './components/NewZones';
+import {PreLoader1} from './components/PreLoader1';
 
 function App() {
   
@@ -27,6 +28,7 @@ function App() {
             <Route exact path="/mapuser" component={PageUser} />
             <Route exact path="/historypage" component={HistoryPage} />
             <Route exact path="/newzones" component={NewZones} />
+            <Route exact path="/loading" component={PreLoader1} />
           </Switch>
         </div>
       </div>

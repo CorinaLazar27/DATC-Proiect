@@ -6,11 +6,13 @@ import axios from "axios";
 
 export function Login() 
 {     
+        
         const [userName, setUserName] = useState("");
         const [password, setPassword] = useState("");
-      
+       
         const history = useHistory();
-      
+        
+     
 
         const getUser= async () => {
         
@@ -22,30 +24,41 @@ export function Login()
               {
                 console.log(response.data[i].partitionKey);
                 console.log(response.data[i].password);
+                console.log(response.data[i].rowKey);
                 if((userName == response.data[i].partitionKey) && (password == response.data[i].password))
-                    { 
+                  { 
                       if(response.data[i].rowKey == "admin")
-                      {history.push("/map");}
+                      {
+                      
+                        history.push("/map");
+                      
+                        break;}
                       else if(response.data[i].rowKey == "user")
-                     {
-                        history.push("/mapuser");
-                    }
-                         else 
-                         {
-                           history.push("/sign-up");
-                          }
-                       
-                   
+                        {
+                        
+                          history.push("/mapuser");
+                          
+        
+                          break;}
+            
 
                   }
+                  else {  
+                    
+                    history.push("/sign-up");
+                   
+                      }
               }
         });
       };
 
+        function RegisterClick(){
+          history.push("/sign-up");
+        }
         function LoginClick() {
             
           getUser();
-          history.push("/sign-up");
+          history.push("/loading");
       
           }
       
@@ -54,17 +67,7 @@ export function Login()
           <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             <div className="container">
               <Link className="navbar-brand" to={"/sign-in"}>AMBROZIA</Link>
-              <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul className="navbar-nav ml-auto">
-                  <li className="nav-item">
-                    <Link className="nav-link" to={"/sign-in"}>Login</Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to={"/sign-up"}>Register</Link>
-                  </li>
-                  
-                </ul>
-              </div>
+        
             </div>
           </nav>
             <form>
@@ -85,7 +88,11 @@ export function Login()
                 
 
                 <button type="submit" className="btn btn-primary btn-block" onClick={() => LoginClick()}>Submit</button>
-               
+               <div>
+              
+                <button className="btn" onClick={() => RegisterClick()}>Don't have an account? Go to Register!</button>
+                
+                </div>
             </form></div>
         );
     
