@@ -26,7 +26,7 @@ export function SignUp() {
     };
 
     await axios
-      .post("/user",data,
+      .post('/user',data,
 
       )
       .then((response) => response)

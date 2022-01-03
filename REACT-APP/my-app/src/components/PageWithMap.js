@@ -18,12 +18,16 @@ export function PageWithMap()  {
       history.push("/newzones")
 
     }
+    function LogOutClick() {
+      history.push("/sign-in");
+    }
+        
         return (
           <div className="App">
           <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             <div className="container">
               <Link className="navbar-brand" to={"/sign-in"}>AMBROZIA</Link>
-              <button className="btn-logout">Logout</button>
+              <button className="btn-logout" onClick={()=>LogOutClick()}>Logout</button>
             </div>
           </nav>
     

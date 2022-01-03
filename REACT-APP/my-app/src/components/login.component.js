@@ -16,8 +16,9 @@ export function Login()
 
         const getUser= async () => {
         
+        
+        axios.get('/user')
 
-          axios.get('/user')
         .then((response) => {
          console.log(response.data);
           for (var i=0; i <response.data.length; i++)
@@ -90,7 +91,7 @@ export function Login()
                 <button type="submit" className="btn btn-primary btn-block" onClick={() => LoginClick()}>Submit</button>
                <div>
               
-                <button className="btn" onClick={() => RegisterClick()}>Don't have an account? Go to Register!</button>
+                <button className="btn" onClick={() => RegisterClick()}>Register..</button>
                 
                 </div>
             </form></div>
