@@ -23,17 +23,13 @@ export function PageUser()  {
           <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             <div className="container">
               <Link className="navbar-brand" to={"/sign-in"}>AMBROZIA</Link>
-           
+              <button className="btn-logout">Logout</button>
             </div>
           </nav>
-          <div className="admin">
-          <div className="datas">
-            <div className="buttons">
-              <Button className="btn" onClick={() => HistoryClick()} >
-               Istoric
-              </Button>
-            </div>
-          </div>
+          <div className="zones">
+                 <label>Zone cu ambrozie:</label>
+                 <input type="text" className="nr-zones" placeholder="Aici o sa apara nr. zonelor cu ambrozie "/>
+               </div>
           <div className="map1">
             <GoogleMapForm />
             <button onClick={() => window.location.reload(false)}>Click to refresh map!</button>
@@ -41,7 +37,7 @@ export function PageUser()  {
        
         </div>
       
-        </div>
+        
         
         );
     
