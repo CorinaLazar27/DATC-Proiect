@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 using API;
+using System;
 
 namespace API
 {
@@ -13,13 +14,15 @@ namespace API
         private string connectionString;
         private CloudTableClient tableClient;
         private CloudTable requestsTable;
-        
+        private CloudTable historicTable;
         private async Task InitializeTable()
         {
             var account = CloudStorageAccount.Parse( connectionString );
             tableClient = account.CreateCloudTableClient();
-            requestsTable = tableClient.GetTableReference( "map" );
+            requestsTable = tableClient.GetTableReference( "requests" );
+            historicTable = tableClient.GetTableReference( "historic" );
             await requestsTable.CreateIfNotExistsAsync();
+            await historicTable.CreateIfNotExistsAsync();
         }
 
         public RequestRepository(IConfiguration configuration)
@@ -28,20 +31,37 @@ namespace API
             Task.Run(async () => {await InitializeTable(); }).GetAwaiter().GetResult();
         }
 
+        public async Task AddNewHistory(string Latitude, int count)
+        {
+            var metric = new HistoricEntity(Latitude, DateTime.UtcNow.ToString("yyyy-MM-dd-HH-mm-ss-fffffff"));
+            metric.Count = count;
+
+            var addOperation=TableOperation.Insert(metric);
+            await historicTable.ExecuteAsync(addOperation);
+            
+        }
+
         public async Task<List<RequestEntity>> GetAllRequests()
         {
             var request = new List<RequestEntity>();
             TableQuery<RequestEntity> query = new TableQuery<RequestEntity>();
             TableContinuationToken token = null;
+            int count=0;
             
             do
             {
                 TableQuerySegment<RequestEntity> segment = await requestsTable.ExecuteQuerySegmentedAsync( query, token );
                 token = segment.ContinuationToken;
                 request.AddRange( segment.Results );
+                foreach(RequestEntity entity in segment.Results)
+                {
+                    count++;
+                }
+                await AddNewHistory("Total",count);
+                
             }while( token != null );
-
             return request;
+
         }
 
         public async Task<RequestEntity> GetRequest(string id)

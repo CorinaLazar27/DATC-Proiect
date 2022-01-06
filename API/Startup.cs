@@ -30,6 +30,7 @@ namespace API
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IRequestRepository, RequestRepository>();
             services.AddScoped<IHistoricRepository, HistoricRepository>();
+            services.AddScoped<INumberOfUsersRepository, NumberOfUsersRepository>();
             
             services.AddControllers();
             services.AddSwaggerGen(c =>

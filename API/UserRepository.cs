@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 using API;
+using System;
 
 namespace API
 {
@@ -13,12 +14,15 @@ namespace API
         private string connectionString;
         private CloudTableClient tableClient;
         private CloudTable usersTable;
+        private CloudTable numberOfUsersTable;
         private async Task InitializeTable()
         {
             var account = CloudStorageAccount.Parse( connectionString );
             tableClient = account.CreateCloudTableClient();
             usersTable = tableClient.GetTableReference( "users" );
+            numberOfUsersTable = tableClient.GetTableReference( "numberOfUsers" );
             await usersTable.CreateIfNotExistsAsync();
+            await numberOfUsersTable.CreateIfNotExistsAsync();
         }
 
         public UserRepository(IConfiguration configuration)
@@ -26,20 +30,37 @@ namespace API
             connectionString = configuration.GetValue(typeof(string), "AzureStorageAccountConnectionString").ToString();
             Task.Run(async () => {await InitializeTable(); }).GetAwaiter().GetResult();
         }
+        public async Task AddNewNumberOfUsers(string typeOfUser, int count)
+        {
+            var numberodusers = new NumberOfUsersEntity(typeOfUser, DateTime.UtcNow.ToString("yyyy-MM-dd-HH-mm-ss-fffffff"));
+            numberodusers.Count = count;
 
-        public async Task<List<UserEntity>> GetAllUsers()
+            var addOperation=TableOperation.Insert(numberodusers);
+            await numberOfUsersTable.ExecuteAsync(addOperation);
+            
+        }
+
+         public async Task<List<UserEntity>> GetAllUsers()
         {
             var user = new List<UserEntity>();
             TableQuery<UserEntity> query = new TableQuery<UserEntity>();
             TableContinuationToken token = null;
+
+            int count=0;
+            string[] type = new string[10];
             
             do
             {
                 TableQuerySegment<UserEntity> segment = await usersTable.ExecuteQuerySegmentedAsync( query, token );
                 token = segment.ContinuationToken;
                 user.AddRange( segment.Results );
+                
+                foreach(UserEntity entity in segment.Results)
+                {
+                    count ++; 
+                }
+               await AddNewNumberOfUsers("Total",count);
             }while( token != null );
-
             return user;
         }
 

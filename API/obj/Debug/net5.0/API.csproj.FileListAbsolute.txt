@@ -34,3 +34,39 @@ F:\Facultate\Anul 4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\pu
 F:\Facultate\Anul 4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\publish\API.runtimeconfig.json
 F:\Facultate\Anul 4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\publish\appsettings.Development.json
 F:\Facultate\Anul 4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\publish\appsettings.json
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\appsettings.Development.json
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\appsettings.json
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\publish\web.config
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\publish\API.deps.json
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\publish\API.runtimeconfig.json
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\publish\appsettings.Development.json
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\publish\appsettings.json
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\API.exe
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\API.deps.json
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\API.runtimeconfig.json
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\API.runtimeconfig.dev.json
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\API.dll
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\ref\API.dll
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\API.pdb
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\Microsoft.OpenApi.dll
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\Newtonsoft.Json.dll
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\bin\Debug\net5.0\Microsoft.WindowsAzure.Storage.dll
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\API.csproj.AssemblyReference.cache
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\API.GeneratedMSBuildEditorConfig.editorconfig
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\API.AssemblyInfoInputs.cache
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\API.AssemblyInfo.cs
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\API.csproj.CoreCompileInputs.cache
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\API.MvcApplicationPartsAssemblyInfo.cs
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\API.MvcApplicationPartsAssemblyInfo.cache
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\staticwebassets\API.StaticWebAssets.Manifest.cache
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\staticwebassets\API.StaticWebAssets.xml
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\scopedcss\bundle\API.styles.css
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\API.RazorTargetAssemblyInfo.cache
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\API.csproj.CopyComplete
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\API.dll
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\ref\API.dll
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\API.pdb
+F:\Facultate\Anul4\Semestrul1\DATC\Proiect\DATC-Proiect\API\obj\Debug\net5.0\API.genruntimeconfig.cache

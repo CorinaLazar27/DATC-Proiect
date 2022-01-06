@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using API;
 public interface IRequestRepository
 {
-    Task<List<RequestEntity>> GetAllRequests();
+     Task<List<RequestEntity>> GetAllRequests();
     
     Task<RequestEntity> GetRequest(string id);
     

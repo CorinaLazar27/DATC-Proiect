@@ -4,10 +4,10 @@ namespace API
 {
     public class HistoricEntity : TableEntity
     {
-        public HistoricEntity(string Status, string TimeStamp)
+        public HistoricEntity(string Latitude, string Timestamp)
         {
-            this.PartitionKey=Status;
-            this.RowKey=TimeStamp;
+            this.PartitionKey=Latitude;
+            this.RowKey=Timestamp;
         }
 
         public HistoricEntity(){}
