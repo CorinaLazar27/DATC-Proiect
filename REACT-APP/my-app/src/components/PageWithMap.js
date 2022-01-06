@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 export function PageWithMap()  {
     
      const history = useHistory();
-     
      function HistoryClick() {
       
       console.log("Try to history:");

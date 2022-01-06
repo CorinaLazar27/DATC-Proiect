@@ -4,21 +4,34 @@ import { Button } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-import axios from "axios";
+import * as locations from "../locations.json";
 
+import axios from "axios";
+import fs from 'fs';
 export function PageUser()  {
 
-  
+ 
   const loadLocation= async()=>
   {
-    //var fs = require('fs');
+    var app = window.require('electron').remote;
+    const fs = app.require('fs');
+    const path = "./locations.json";
+    var json = {
+      "foo":"bar",
+      "bar":"none"
+  }
     axios.get('/request')
     .then((response) => {
                 console.log(response.data);
-               // fs.writeFile('./locations.json',response.data);
+            try{
+               fs.writeFile(path,json);}
+               catch (err) {
+                throw err;
+              }
                 for (var i=0; i <response.data.length; i++)
             {
   
+                  
                   console.log(response.data[i].partitionKey);
                   console.log(response.data[i].rowKey);
                   
