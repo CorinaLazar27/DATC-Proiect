@@ -143,7 +143,7 @@ function Map()
       ]);
       }}
       >
-
+        
 {
   locations.features.map(loc => (
         <Marker

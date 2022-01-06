@@ -7,6 +7,8 @@ import axios from "axios";
 export function Login() 
 {     
         
+
+      
         const [userName, setUserName] = useState("");
         const [password, setPassword] = useState("");
        
@@ -91,7 +93,7 @@ export function Login()
                 <button type="submit" className="btn btn-primary btn-block" onClick={() => LoginClick()}>Submit</button>
                <div>
               
-                <button className="btn" onClick={() => RegisterClick()}>Register..</button>
+                <button className="btn btn-link" onClick={() => RegisterClick()}>Register..</button>
                 
                 </div>
             </form></div>
