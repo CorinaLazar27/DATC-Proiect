@@ -4,17 +4,39 @@ import { Button } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-
-
+import axios from "axios";
 
 export function PageUser()  {
-  const history = useHistory();
-  function HistoryClick() {
-   
-   console.log("Try to history:");
-   history.push("/historypage")
 
- }
+  
+  const loadLocation= async()=>
+  {
+    //var fs = require('fs');
+    axios.get('/request')
+    .then((response) => {
+                console.log(response.data);
+               // fs.writeFile('./locations.json',response.data);
+                for (var i=0; i <response.data.length; i++)
+            {
+  
+                  console.log(response.data[i].partitionKey);
+                  console.log(response.data[i].rowKey);
+                  
+            }
+              console.log(response.data.length);
+            
+                      }
+
+                    
+                    
+    );
+    
+    
+  }
+  const history = useHistory();
+  
+
+
  function LogOutClick() {
   history.push("/sign-in");
 }
@@ -31,8 +53,11 @@ export function PageUser()  {
           </nav>
          
           <div className="map1">
-            <GoogleMapForm />
-            <button onClick={() => window.location.reload(false)}>Click to refresh map!</button>
+            <GoogleMapForm 
+             
+            />
+           <button onClick={() => window.location.reload(false)}>Click to refresh map!</button>
+           <button onClick={() => loadLocation()}>Click to load locations with ambrosia!</button>
           </div>
        
         </div>

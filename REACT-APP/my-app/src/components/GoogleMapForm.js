@@ -4,11 +4,46 @@ import { Marker } from "react-google-maps";
 import Geocode from "react-geocode";
 import axios from "axios";
 
+import * as locations from "../locations.json";
 export default function GoogleMapForm(){
 
   
 function Map()
 {
+
+  const [location,setLocation] =useState({latitudeMe:"",longitudeMe:""});
+  const [locationToDataBase,setLocationToDataBase]=useState({lat:"",long:""});
+  const [locationToMap,setLocationToMap]= useState({latitudine:"",longitudine:""});
+  const latitudine = [];
+  const longitudine =[];
+  
+  
+  const loadLocation= async()=>
+  {
+    axios.get('/request')
+    .then((response) => {
+                console.log(response.data);
+                setLocationToMap({...locationToMap, latitudine: response.data[0].partitionKey, longitudine:response.data[0].rowKey});
+  
+                for (var i=0; i <response.data.length; i++)
+            {
+  
+                  setLocationToMap({...locationToMap, latitudine: response.data[i].partitionKey, longitudine:response.data[i].rowKey});
+                  console.log("Latitude1:"+locationToMap.latitudine);
+                  console.log("Longitude1:"+locationToMap.longitudine);
+                  latitudine.push(response.data[i].partitionKey);
+                  longitudine.push(response.data[i].rowKey);
+            }
+            console.log(latitudine[2]);
+            console.log(longitudine[2]);
+            console.log("s-a executat");
+            
+                      }
+                    
+    );
+    
+    
+  }
   const putLocationToDataBase= async () => {
 
     const data = {
@@ -32,8 +67,7 @@ function Map()
      
   };
   
-  const [location,setLocation] =useState({latitudeMe:"",longitudeMe:""});
-  const [locationToDataBase,setLocationToDataBase]=useState({lat:"",long:""});
+  
   const getLocation=()=>
   {
     if(navigator.geolocation){
@@ -65,17 +99,23 @@ function Map()
   
  
     return(
+    
       <div>
       < GoogleMap
+      
       zoom={18}
       center={
         { lat: Number(location.latitudeMe),
           lng: Number(location.longitudeMe)}
         }
+      
+       
       onClick={(event)=>{
-      
-      
+        
+       loadLocation();
       putLocationToDataBase();
+
+
       console.log([locationToDataBase.lat,locationToDataBase.long]);
 
        Geocode.fromLatLng(event.latLng.lat(), event.latLng.lng()).then(
@@ -92,7 +132,6 @@ function Map()
       );
 
 
-      
         setMarkers((current) =>[
           ...current,
         {
@@ -100,28 +139,48 @@ function Map()
           lng:event.latLng.lng(),
           time: new Date(),
     
-          
         },
       ]);
       }}
       >
+
+{
+  locations.features.map(loc => (
+        <Marker
+          key={loc.properties.LOCATION_ID}
+          position={{
+            lat: loc.geometry.coordinates[0],
+            lng: loc.geometry.coordinates[1]
+          }}
+         
+        />
+      ))}
+     
+      
         {
-        
+     
         markers.map((marker) =>
         (
-         
+          
         < Marker
-                   key={marker.time.toISOString()}
-                   position={{lat:marker.lat,lng: marker.lng}}
-                      set
-                 icon={{
+                   key={marker.time.toISOString()} 
+                   position={  {lat:marker.lat,lng: marker.lng}}
+                   set icon={{
                    url:"http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
                   }
                 }
        />
+
+      
         )
         )
+
         }
+     
+   
+
+
+        
         </GoogleMap>
         </div>
       
@@ -129,8 +188,11 @@ function Map()
 }
 
   const WrappedMap = withScriptjs(withGoogleMap(Map));
-  
+ 
+
+
   return (
+    
     <div style={{ width: "100%", height: "100%" }}>
       <WrappedMap
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${
@@ -139,7 +201,10 @@ function Map()
         loadingElement={<div style={{ height: "100%" }} />}
         containerElement={<div style={{ height: "100%" }} />}
         mapElement={<div style={{ height: "100%" }} />}
+        
       ></WrappedMap>
+     
+       
     </div>
   );
 };

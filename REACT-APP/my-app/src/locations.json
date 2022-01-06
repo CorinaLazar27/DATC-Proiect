@@ -1,0 +1,38 @@
+{
+    "features": [{
+       "properties": {
+          "LOCATION_ID": 1
+         
+       },
+       "geometry": {
+          "coordinates": [44.9185772, 25.4636917]
+       }
+    }, 
+    
+    
+    {
+       "properties": {
+          "LOCATION_ID": 2
+         
+       },
+       "geometry": {
+          "coordinates": [46.064855, 23.5888451 ]
+       }
+    },
+    
+    
+    {
+       "properties": {
+          "LOCATION_ID": 3
+          
+       },
+       "geometry": {
+          "coordinates": [46.0649966, 23.5872926]
+       }
+    }
+
+
+]
+ }
+
+ 
