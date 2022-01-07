@@ -51,15 +51,15 @@ export function HistoryPage()  {
          
                <h3>Detalii</h3>
 
-               <div className="zones">
+               <div className="details">
                  <label>Ambrozia zones:</label>
                  <input type="text" className="nr-zones" placeholder=" " value={nrlocatii}/>
-                 <button onClick={() => numarLocatii()}>Get number of locations!</button>
+                 <button className="btn-locations" onClick={() => numarLocatii()}>Get number of locations!</button>
                </div>
-               <div className="zones">
+               <div className="details">
                  <label>Total users</label>
-                 <input type="text" className="nr-zones" placeholder=" " value={nrutilizatori}/>
-                 <button onClick={() => numarUtilizatori()}>Get number of users!</button>
+                 <input type="text" className="nr-users" placeholder=" " value={nrutilizatori}/>
+                 <button className="btn-user" onClick={() => numarUtilizatori()}>Get number of users!</button>
                </div>
                <button onClick={()=>history.push("/map")}>Back to map</button>
                </div>

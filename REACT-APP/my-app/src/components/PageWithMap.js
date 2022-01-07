@@ -18,13 +18,13 @@ export function PageWithMap()  {
             <div className="container">
               <Link className="navbar-brand">AMBROZIA</Link>
               
-       
+              <button className="btn-admin" onClick={()=>history.push("/historypage")}>DETALII</button>
              
               <button className="btn-logout" onClick={()=>LogOutClick()}>Logout</button>
             </div>
           </nav>
     
-                <Button onClick={()=>history.push("/historypage")}>DETALII ADMIN</Button>
+               
               
                 <div className="map1">
                   <GoogleMapForm />
