@@ -174,13 +174,8 @@ function Map()
       
         )
         )
-
         }
-     
-   
-
-
-        
+         
         </GoogleMap>
         </div>
       

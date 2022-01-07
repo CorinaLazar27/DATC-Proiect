@@ -11,12 +11,41 @@ export function HistoryPage()  {
   const history = useHistory();
      const [nrlocatii, setNrLocatii] = useState("");
      const [nrutilizatori, setNrUtilizatori] = useState("");
+
+     const numarLocatiiFunctie= async()=>
+  {
+    numarLocatii();
+    axios.get('/historic')
+    .then((response) => {
+                console.log(response.data);
+            
+              console.log(response.data[response.data.length-1].count);
+             setNrLocatii(response.data[response.data.length-1].count);
+                      }
+
+                    
+                    
+    );}
+    const numarUtilizatoriFunctie= async()=>
+    {
+      numarUtilizatori();
+      axios.get('/numberofusers')
+      .then((response) => {
+                console.log(response.data);
+                console.log(response.data[response.data.length-1].count);
+              
+                setNrUtilizatori(response.data[response.data.length-1].count);
+                        }
+  
+                      
+                      
+      );}
   const numarLocatii= async()=>
   {
     
     axios.get('/request')
     .then((response) => {
-                console.log(response.data);
+               console.log(response.data);
             
               console.log(response.data.length);
               setNrLocatii(response.data.length);
@@ -30,9 +59,9 @@ export function HistoryPage()  {
     
     axios.get('/user')
     .then((response) => {
-                console.log(response.data);
+             //   console.log(response.data);
             
-              console.log(response.data.length);
+            //  console.log(response.data.length);
               setNrUtilizatori(response.data.length);
                       }
 
@@ -52,14 +81,14 @@ export function HistoryPage()  {
                <h3>Detalii</h3>
 
                <div className="details">
-                 <label>Ambrozia zones:</label>
+                 <label>Ambrosia:</label>
                  <input type="text" className="nr-zones" placeholder=" " value={nrlocatii}/>
-                 <button className="btn-locations" onClick={() => numarLocatii()}>Get number of locations!</button>
+                 <button className="btn-locations" onClick={() => numarLocatiiFunctie()}>Get</button>
                </div>
                <div className="details">
-                 <label>Total users</label>
+                 <label>Users:</label>
                  <input type="text" className="nr-users" placeholder=" " value={nrutilizatori}/>
-                 <button className="btn-user" onClick={() => numarUtilizatori()}>Get number of users!</button>
+                 <button className="btn-user" onClick={() => numarUtilizatoriFunctie()}>Get</button>
                </div>
                <button onClick={()=>history.push("/map")}>Back to map</button>
                </div>

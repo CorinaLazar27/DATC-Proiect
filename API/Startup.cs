@@ -31,7 +31,7 @@ namespace API
             services.AddScoped<IRequestRepository, RequestRepository>();
             services.AddScoped<IHistoricRepository, HistoricRepository>();
             services.AddScoped<INumberOfUsersRepository, NumberOfUsersRepository>();
-            
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -51,9 +51,18 @@ namespace API
 
             app.UseHttpsRedirection();
 
+          
+
             app.UseRouting();
 
+            app.UseCors(builder=>{
+                builder.AllowAnyMethod();
+                builder.AllowAnyOrigin();
+                builder.AllowAnyHeader();
+            });
+
             app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {
