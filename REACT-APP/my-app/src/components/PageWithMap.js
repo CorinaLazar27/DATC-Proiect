@@ -1,9 +1,9 @@
 import React,{useState} from "react";
 import GoogleMapForm from "./GoogleMapForm";
-import { Button } from "@material-ui/core";
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
+
 export function PageWithMap()  {
     
      const history = useHistory();
@@ -16,7 +16,7 @@ export function PageWithMap()  {
           <div className="App">
           <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             <div className="container">
-              <Link className="navbar-brand">AMBROZIA</Link>
+              <Link className="navbar-brand">AMBROSIA</Link>
               
               <button className="btn-admin" onClick={()=>history.push("/historypage")}>DETALII</button>
              

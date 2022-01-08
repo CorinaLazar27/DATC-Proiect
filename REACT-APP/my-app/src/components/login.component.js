@@ -19,7 +19,7 @@ export function Login()
         const getUser= async () => {
         
         
-        axios.get('/user')
+        axios.get('https://apiambrosia.azurewebsites.net/user')
 
         .then((response) => {
          console.log(response.data);
@@ -69,7 +69,7 @@ export function Login()
           <div className="App">
           <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             <div className="container">
-              <Link className="navbar-brand" to={"/sign-in"}>AMBROZIA</Link>
+              <Link className="navbar-brand" to={"/sign-in"}>AMBROSIA</Link>
         
             </div>
           </nav>

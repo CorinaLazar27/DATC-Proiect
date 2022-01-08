@@ -26,7 +26,7 @@ export function SignUp() {
     };
 
     await axios
-      .post('/user',data,
+      .post('https://apiambrosia.azurewebsites.net/user',data,
 
       )
       .then((response) => response)
@@ -48,7 +48,7 @@ export function SignUp() {
           <div className="App">
           <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             <div className="container">
-              <Link className="navbar-brand" to={"/sign-in"}>AMBROZIA</Link>
+              <Link className="navbar-brand" to={"/sign-in"}>AMBROSIA</Link>
               
             </div>
           </nav>

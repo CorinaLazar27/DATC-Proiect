@@ -15,7 +15,7 @@ export function HistoryPage()  {
      const numarLocatiiFunctie= async()=>
   {
     numarLocatii();
-    axios.get('/historic')
+    axios.get('https://apiambrosia.azurewebsites.net/historic')
     .then((response) => {
                 console.log(response.data);
             
@@ -29,7 +29,7 @@ export function HistoryPage()  {
     const numarUtilizatoriFunctie= async()=>
     {
       numarUtilizatori();
-      axios.get('/numberofusers')
+      axios.get('https://apiambrosia.azurewebsites.net/numberofusers')
       .then((response) => {
                 console.log(response.data);
                 console.log(response.data[response.data.length-1].count);
@@ -43,7 +43,7 @@ export function HistoryPage()  {
   const numarLocatii= async()=>
   {
     
-    axios.get('/request')
+    axios.get('https://apiambrosia.azurewebsites.net/request')
     .then((response) => {
                console.log(response.data);
             
@@ -57,7 +57,7 @@ export function HistoryPage()  {
     const numarUtilizatori= async()=>
   {
     
-    axios.get('/user')
+    axios.get('https://apiambrosia.azurewebsites.net/user')
     .then((response) => {
              //   console.log(response.data);
             
@@ -73,7 +73,7 @@ export function HistoryPage()  {
             <div className="App">
             <nav className="navbar navbar-expand-lg navbar-light fixed-top">
               <div className="container">
-                <Link className="navbar-brand" >AMBROZIA</Link>
+                <Link className="navbar-brand" >AMBROSIA</Link>
              
               </div>
             </nav>

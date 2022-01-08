@@ -12,7 +12,7 @@ export function PageUser()  {
   const loadLocation= async()=>
   {
    
-    axios.get('/request')
+    axios.get('https://apiambrosia.azurewebsites.net/request')
     .then((response) => {
                 console.log(response.data);
            
@@ -48,7 +48,7 @@ export function PageUser()  {
               
           <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             <div className="container">
-              <Link className="navbar-brand" >AMBROZIA</Link>
+              <Link className="navbar-brand" >AMBROSIA</Link>
               <button className="btn-logout" onClick={()=>LogOutClick()}>Logout</button>
              
             </div>

@@ -20,7 +20,7 @@ function Map()
   
   const loadLocation= async()=>
   {
-    axios.get('/request')
+    axios.get('https://apiambrosia.azurewebsites.net/request')
     .then((response) => {
                 console.log(response.data);
                 setLocationToMap({...locationToMap, latitudine: response.data[0].partitionKey, longitudine:response.data[0].rowKey});
@@ -55,7 +55,7 @@ function Map()
     };
 
     await axios
-      .post("/request",data,
+      .post("https://apiambrosia.azurewebsites.net/request",data,
 
       )
       .then((response) => response)
