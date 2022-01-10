@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-export function HistoryPage()  {
+export function Details()  {
 
   const history = useHistory();
      const [nrlocatii, setNrLocatii] = useState("");
@@ -78,7 +78,7 @@ export function HistoryPage()  {
               </div>
             </nav>
          
-               <h3>Detalii</h3>
+               <h3>Details</h3>
 
                <div className="details">
                  <label>Ambrosia:</label>
@@ -90,9 +90,9 @@ export function HistoryPage()  {
                  <input type="text" className="nr-users" placeholder=" " value={nrutilizatori}/>
                  <button className="btn-user" onClick={() => numarUtilizatoriFunctie()}>Get</button>
                </div>
-               <button onClick={()=>history.push("/map")}>Back to map</button>
+               <button className="btn-back" onClick={()=>history.push("/map")}>Back to map</button>
                </div>
         );
     
 }
-export default HistoryPage;
+export default Details;

@@ -18,7 +18,7 @@ export function PageWithMap()  {
             <div className="container">
               <Link className="navbar-brand">AMBROSIA</Link>
               
-              <button className="btn-admin" onClick={()=>history.push("/historypage")}>DETALII</button>
+              <button className="btn-admin" onClick={()=>history.push("/details")}>DETAILS</button>
              
               <button className="btn-logout" onClick={()=>LogOutClick()}>Logout</button>
             </div>
