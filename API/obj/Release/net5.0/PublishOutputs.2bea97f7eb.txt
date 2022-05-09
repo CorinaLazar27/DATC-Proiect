@@ -1,0 +1,13 @@
+C:\Users\corin\OneDrive\Desktop\FACULTATE AN 4\DAC\Proiect\DATC-Proiect\API\publish\API.exe
+C:\Users\corin\OneDrive\Desktop\FACULTATE AN 4\DAC\Proiect\DATC-Proiect\API\publish\appsettings.Development.json
+C:\Users\corin\OneDrive\Desktop\FACULTATE AN 4\DAC\Proiect\DATC-Proiect\API\publish\appsettings.json
+C:\Users\corin\OneDrive\Desktop\FACULTATE AN 4\DAC\Proiect\DATC-Proiect\API\publish\API.dll
+C:\Users\corin\OneDrive\Desktop\FACULTATE AN 4\DAC\Proiect\DATC-Proiect\API\publish\API.deps.json
+C:\Users\corin\OneDrive\Desktop\FACULTATE AN 4\DAC\Proiect\DATC-Proiect\API\publish\API.runtimeconfig.json
+C:\Users\corin\OneDrive\Desktop\FACULTATE AN 4\DAC\Proiect\DATC-Proiect\API\publish\API.pdb
+C:\Users\corin\OneDrive\Desktop\FACULTATE AN 4\DAC\Proiect\DATC-Proiect\API\publish\Microsoft.OpenApi.dll
+C:\Users\corin\OneDrive\Desktop\FACULTATE AN 4\DAC\Proiect\DATC-Proiect\API\publish\Newtonsoft.Json.dll
+C:\Users\corin\OneDrive\Desktop\FACULTATE AN 4\DAC\Proiect\DATC-Proiect\API\publish\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\corin\OneDrive\Desktop\FACULTATE AN 4\DAC\Proiect\DATC-Proiect\API\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\corin\OneDrive\Desktop\FACULTATE AN 4\DAC\Proiect\DATC-Proiect\API\publish\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\corin\OneDrive\Desktop\FACULTATE AN 4\DAC\Proiect\DATC-Proiect\API\publish\Microsoft.WindowsAzure.Storage.dll
